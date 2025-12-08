@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">OmegaNav</string>
-    <string name="position_format">X: %.3f  Y: %.3f  Z: %.3f</string>
+    <string name="app_name">SmartnavDR</string>
 </resources>

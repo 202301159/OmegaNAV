@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.OmegaNav" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.SmartnavDR" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.OmegaNav" parent="Base.Theme.OmegaNav" />
+    <style name="Theme.SmartnavDR" parent="Base.Theme.SmartnavDR" />
 </resources>

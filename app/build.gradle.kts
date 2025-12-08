@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.omeganav"
+    namespace = "com.example.smartnavdr"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.omeganav"
-        minSdk = 24
+        applicationId = "com.example.smartnavdr"
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -26,7 +26,6 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -34,19 +33,15 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

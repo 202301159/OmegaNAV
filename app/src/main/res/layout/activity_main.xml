@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.omeganav.PathView
+    <!-- Top-down Dead Reckoning Map -->
+    <com.example.smartnavdr.PathView
         android:id="@+id/pathView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textPosition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Position Display -->
+    <TextView
+        android:id="@+id/textPosition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Position: (0.00, 0.00) m"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/pathView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Velocity Display -->
+    <TextView
+        android:id="@+id/textVelocity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Velocity: (0.00, 0.00) m/s"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textPosition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Horizontal Guideline to keep buttons ABOVE navigation bar -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <!-- START Button -->
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textVelocity"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonReset" />
+
+    <!-- RESET Button -->
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textVelocity"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
+        app:layout_constraintStart_toEndOf="@id/buttonStart"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

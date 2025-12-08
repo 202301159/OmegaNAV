@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OmegaNav"
+rootProject.name = "SmartnavDR"
 include(":app")
  
