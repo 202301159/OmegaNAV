@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootSlam"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#111111">
+
+    <!-- Camera + overlay + Stop button -->
+    <FrameLayout
+        android:id="@+id/cameraContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <SurfaceView
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Green landmark points overlay -->
+        <com.example.smartnavdr.SlamOverlayView
+            android:id="@+id/slamOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Stop button over the camera -->
+        <Button
+            android:id="@+id/buttonStopSlam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:layout_margin="16dp"
+            android:layout_gravity="top|end" />
+    </FrameLayout>
+
+    <!-- Map + stats only visible AFTER stop -->
+    <LinearLayout
+        android:id="@+id/slamInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textSlamPose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pose: (0.00, 0.00)"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/textSlamStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FPS: 0 | Features: 0"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:paddingBottom="8dp" />
+
+        <com.example.smartnavdr.PathView
+            android:id="@+id/slamPathView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
